@@ -1,0 +1,108 @@
+// Customizing Bootstrap with Sass variables:
+// https://getbootstrap.com/docs/5.0/customize/sass/
+
+// $primary: #276fc2;
+// $secondary: #e8d21d;
+// $border-radius: 1px;
+
+// Required
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap');
+@import '../node_modules/bootstrap/scss/bootstrap';
+
+html,
+body {
+  position: relative;
+  height: 100%;
+}
+
+body {
+  background: #eee;
+  font-size: 14px;
+  color: #000;
+  margin: 0;
+  padding: 0;
+}
+
+.swiper {
+  width: 430px;
+  height: calc(100vh - 85px);
+}
+
+.swiper-slide {
+  text-align: center;
+  font-size: 18px;
+  background: #fff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.swiper-slide img {
+  display: block;
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+}
+
+.btn-green {
+  background-color: #25d366;
+  color: white;
+  &:hover {
+    background-color: #00c248;
+  }
+  &::before {
+    content: url('/img/whatsapp.svg');
+    display: inline-block;
+    width: 21px;
+    height: 21px;
+    padding-top: 3px;
+  }
+}
+
+@media (max-height: 700px) {
+  .swiper {
+    height: auto;
+  }
+}
+
+/* Oculta flechas por defecto */
+.swiper-button-next,
+.swiper-button-prev {
+  display: none !important;
+}
+
+/* Muestra flechas solo en pantallas mayores a 720px */
+@media (min-width: 721px) {
+  .swiper-button-next,
+  .swiper-button-prev {
+    display: block !important;
+  }
+}
+
+/*Homepage*****************/
+#homepage {
+  background-color: #a7cdd0;
+  .main {
+    background-color: #a7cdd0;
+    width: 100%;
+    //height: calc(100vh - 85px);
+    h1 {
+      font-family: 'Playfair Display', serif;
+    }
+    .btn-toku-hogar {
+      background: url(/img/btn-hogar-default.svg) no-repeat;
+      width: 105px;
+      height: 40px;
+    }
+    .btn-toku-pets {
+      background: url(/img/btn-pets-default.svg) no-repeat;
+      width: 105px;
+      height: 40px;
+    }
+    .btn-toku-luz {
+      background: url(/img/btn-luz-default.svg) no-repeat;
+      width: 105px;
+      height: 40px;
+    }
+  }
+}
