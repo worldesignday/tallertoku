@@ -32,4 +32,8 @@ const swiper = new Swiper('.swiper', {
   scrollbar: {
     el: '.swiper-scrollbar',
   },
+   // hashNavigation
+  hashNavigation: {
+    watchState: true,
+  },
 });
